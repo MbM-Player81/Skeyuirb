@@ -359,19 +359,135 @@ function Update:Window(text,logo,keybind)
     function osfunc:Set(textadd)
         ServerTime.Text = textadd
     end
+local Padding = Instance.new("Frame")
+Padding.Visible = SearchUp or false
+Padding.Name = "TextBoxPadding"
+Padding.BorderSizePixel = 0
+Padding.Active = true
+Padding.BackgroundColor3 = Color3.fromRGB(50,50,50)
+Padding.Position = UDim2.new(0.556, 0, 0.505, 0)
+Padding.AnchorPoint = Vector2.new(0.5,0.5)
+Padding.Size = UDim2.new(0.54, 0, 0.6, 0)
+Padding.Transparency = 0
+Padding.BackgroundTransparency = 0
+Padding.BorderSizePixel = 0
+Padding.ZIndex = 4
+Padding.SizeConstraint = "RelativeXY"
+Padding.Parent = Bar
+Lib:UICorner(Padding,4)
 
-    local Ping = Instance.new("TextLabel")
-    Ping.Name = "Ping"
-    Ping.Parent = Top
-    Ping.BackgroundColor3 = Color3.fromRGB(158, 31, 237)
-    Ping.BackgroundTransparency = 1.000
-    Ping.Position = UDim2.new(0.80, 0,0.074, 0)
-    Ping.Size = UDim2.new(0, 225, 0, 25)
-    Ping.Font = Enum.Font.GothamSemibold
-    Ping.Text = "Mbm Hub"
-    Ping.TextColor3 = Color3.fromRGB(158, 31, 237)
-    Ping.TextSize = 14.000
-    Ping.TextXAlignment = Enum.TextXAlignment.Left
+local Textbox = Instance.new("TextBox")
+Textbox.Visible = SearchUp or false
+Textbox.Name = "TextBox"
+Textbox.BorderSizePixel = 0
+Textbox.Active = true
+Textbox.BackgroundColor3 = Color3.fromRGB(39,39,39)
+Textbox.TextColor3 = Color3.fromRGB(255,255,255)
+Textbox.Position = UDim2.new(0.564, 0, 0.505, 0)
+Textbox.AnchorPoint = Vector2.new(0.5,0.5)
+Textbox.Size = UDim2.new(0.54, 0, 0.6, 0)
+Textbox.Transparency = 0
+Textbox.BackgroundTransparency = 0
+Textbox.BorderSizePixel = 0
+Textbox.RichText = true
+Textbox.Font = "Nunito"
+Textbox.TextSize = 10
+Textbox.Text = ""
+Textbox.PlaceholderText = "Search"
+Textbox.ZIndex = 4
+Textbox.TextXAlignment = "Left"
+Textbox.SizeConstraint = "RelativeXY"
+Textbox.Parent = Bar
+Lib:UICorner(Textbox,4)
+
+local Base = {}
+local Canvas = {}
+function MatchSearch()
+local matched = false
+for i, t in pairs(Base) do
+local v = t[1]
+local Tab = t[2]
+local Container = v.Parent.Parent
+local Scroll = v.Parent
+local Insert = {
+	Scroll.CanvasPosition,Scroll
+}
+local Found = false
+local Position
+local Index
+for i, v in pairs(Canvas) do
+if v[2] == Scroll then
+Index = i
+Found = true
+Position = v[1]
+end
+end
+if string.lower(v.Name):match(Textbox.Text:lower()) and not v.ClassName:match("UI") then
+matched = true
+v.Visible = true
+if not Found then
+table.insert(Canvas,Insert)
+Scroll.CanvasPosition = Vector2.new(0,0)
+elseif Found and Position and Index then
+if string.len(Textbox.Text) <= 0 then
+Scroll.CanvasPosition = Position
+table.remove(Canvas,Index)
+if Canvas[Index] then Canvas[Index] = nil end
+end
+end
+elseif Textbox.Text == "" or Textbox.Text == " " and not v.ClassName:match("UI") then
+matched = false
+Tab.Visible = true
+v.Visible = true
+if Found and Position then
+Scroll.CanvasPosition = Position
+table.remove(Canvas,Index)
+end
+elseif not v.ClassName:match("UI") then
+v.Visible = false
+end
+if matched == false then
+Tab.Visible = false
+elseif matched == true then
+Tab.Visible = true
+end
+end
+end
+
+DC_[#DC_+1] = Textbox:GetPropertyChangedSignal("Text"):Connect(MatchSearch)
+
+local Search = Instance.new("ImageButton")
+Search.Visible = true
+Search.Name = "Search"
+Search.BorderSizePixel = 0
+Search.Image = SearchIn
+Search.ImageTransparency = 0
+Search.Active = true
+Search.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Search.Position = UDim2.new(0.80, 0,0.074, 0)
+Search.AnchorPoint = Vector2.new(0.5,0.5)
+Search.Size = UDim2.new(0.0375, 0, 0.7, 0)
+Search.Transparency = 0
+Search.BackgroundTransparency = 1
+Search.BorderSizePixel = 0
+Search.ZIndex = 4
+Search.SizeConstraint = "RelativeXY"
+Search.Parent = Bar
+
+local Googling = false
+DC_[#DC_+1] = Search.MouseButton1Down:Connect(function()
+	Googling = true
+	end)
+
+DC_[#DC_+1] = Search.MouseButton1Up:Connect(function()
+	if Googling == true then
+	Padding.Visible = not Padding.Visible
+	Textbox.Visible = not Textbox.Visible
+	Textbox.Text = ""
+--MatchSearch()
+	Googling = false
+	end
+	end)
 
 
 
