@@ -415,6 +415,21 @@ UserImageCorner.CornerRadius = UDim.new(0, 100)
 UserImageCorner.Name = "UserImageCorner"
 UserImageCorner.Parent = UserImage
 
+local Logo = Instance.new("ImageLabel")
+Logo.Name = "Logo"
+Logo.Parent = Main
+Logo.BackgroundColor3 = Color3.fromRGB(158, 31, 237)
+Logo.BackgroundTransparency = 1.000
+Logo.Position = UDim2.new(0, -5, 0, -5)
+Logo.Size = UDim2.new(0, 135, 0, 135)
+Logo.Image = "rbxassetid://15582682098"
+local Tab = Instance.new("Frame")
+Tab.Name = "Tab"
+Tab.Parent = Main
+Tab.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Tab.Position = UDim2.new(0, 5, 0, 135)
+Tab.Size = UDim2.new(0, 0, 0, 0)
+
 local TabCorner = Instance.new("UIListLayout")
 TabCorner.Name = "TabCorner"
 TabCorner.Parent = Tab
@@ -3823,7 +3838,7 @@ end)
 
 local Library = Update:Window("MBM Hub","",Enum.KeyCode.RightControl);
 
---local NguyenTien = Library:AddTab("Information","16146893819")
+--local NguyenTien = Library:AddTab("Information","4483345998")
 local If = Library:AddTab("Information","16146893819")
 local Main = Library:AddTab("Main","7733960981")
 local M = Library:AddTab("Item","7734052075")
