@@ -22,7 +22,7 @@ G2L["2"]["BackgroundColor3"] = Color3.fromRGB(171, 255, 255);
 G2L["2"]["BackgroundTransparency"] = 0.6499999761581421;
 G2L["2"]["Size"] = UDim2.new(0, 250, 0, 250);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Position"] = UDim2.new(0.3903295695781708, 0, 0.3471177816390991, 0);
+G2L["2"]["Position"] = UDim2.new(0.3122515082359314, 0, 0.1171712651848793, 0);
 G2L["2"]["Name"] = [[auto chest]];
 
 -- StarterGui.ui.auto chest.TextLabel
@@ -71,7 +71,7 @@ G2L["7"]["Size"] = UDim2.new(0, 247, 0, 63);
 G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["7"]["Text"] = [[made by dakii | m1m]];
 G2L["7"]["BackgroundTransparency"] = 1;
-G2L["7"]["Position"] = UDim2.new(0.012000000104308128, 0, 0.07199999690055847, 0);
+G2L["7"]["Position"] = UDim2.new(0.012000000104308128, 0, 0.06400000303983688, 0);
 
 -- StarterGui.ui.auto chest.TextLabel.UICorner
 G2L["8"] = Instance.new("UICorner", G2L["7"]);
