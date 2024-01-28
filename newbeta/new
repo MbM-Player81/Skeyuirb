@@ -4826,22 +4826,22 @@ end)
     
     Main:AddSeperator("Setting Farm Mode")
 
-    Main:AddLabel("Pos X Front")
-    Main:AddLabel("Pos Y High and low")
-    Main:AddLabel("Pos Z Behind")
+    Main:AddLabel("Pos X ")
+    Main:AddLabel("Pos Y ")
+    Main:AddLabel("Pos Z ")
 
     PosX = 1
-    Main:AddSlider("Pos X",0,50,1,function(value)
+    Main:AddSlider("Pos X",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3-,-35,-40,-45,-50,function(value)
     PosX = value
     end)
 
     PosY = 30
-    Main:AddSlider("Pos Y",0,50,45,function(value)
+    Main:AddSlider("Pos Y",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3-,-35,-40,-45,-50,function(value)
     PosY = value
     end)
 
     PosZ = 10
-    Main:AddSlider("Pos Z",0,50,40,function(value)
+    Main:AddSlider("Pos Z",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3-,-35,-40,-45,-50,function(value)
     PosZ = value
     end)
     
@@ -4850,7 +4850,7 @@ end)
     
     _G.Kill_At = 50
 
-    Main:AddSlider("Kill At %",1,100,25,function(value)
+    Main:AddSlider("Kill At %",1,100,25,10,5,30,40,50,55,45,35,15,60,65,70,75,80,85,90,95function(value)
 
         _G.Kill_At = value
     end)
