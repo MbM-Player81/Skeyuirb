@@ -365,7 +365,7 @@ Ping.Name = "Ping"
 Ping.Parent = Top
 Ping.BackgroundColor3 = Color3.fromRGB(158, 31, 237)
 Ping.BackgroundTransparency = 1.000
-Ping.Position = UDim2.new(0.65, 0,0.074, 0)
+Ping.Position = UDim2.new(0.60, 0,0.074, 0)
 Ping.Size = UDim2.new(0, 225, 0, 25)
 Ping.Font = Enum.Font.GothamSemibold
 Ping.Text = "fNv | https://dsc.gg/m1m-link | nTf"
@@ -392,7 +392,7 @@ User.Size = UDim2.new(0, 125, 0, 40)
     UserText.TextColor3 = Color3.fromRGB(158, 31, 237)
     UserText.Size = UDim2.new(0, 80, 0, 25)
     UserText.Font = Enum.Font.GothamSemibold
-    UserText.Text = "       Mbm Hub"
+    UserText.Text = "Mbm Hub"
     UserText.TextScaled = true
     UserText.TextSize = 17.000
     UserText.TextWrapped = true
@@ -422,7 +422,7 @@ Logo.BackgroundColor3 = Color3.fromRGB(158, 31, 237)
 Logo.BackgroundTransparency = 1.000
 Logo.Position = UDim2.new(0, -5, 0, -5)
 Logo.Size = UDim2.new(0, 135, 0, 135)
-Logo.Image = "rbxassetid://15582682098"
+Logo.Image = "rbxassetid://16146893819"
 local Tab = Instance.new("Frame")
 Tab.Name = "Tab"
 Tab.Parent = Main
@@ -3839,16 +3839,53 @@ end)
 local Library = Update:Window("MBM Hub","",Enum.KeyCode.RightControl);
 
 --local NguyenTien = Library:AddTab("Information","4483345998")
-local Main = Library:AddTab("Main","4483345998")
-local M = Library:AddTab("Item","4483345998")
-local Ss = Library:AddTab("Stats","4483345998")
-local RaceV4 = Library:AddTab("Race V4","4483345998")
-local P = Library:AddTab("PVP","4483345998")
-local R = Library:AddTab("Dungeon","4483345998")
-local T = Library:AddTab("Teleport","4483345998")
-local S = Library:AddTab("Shop","4483345998")
-local D = Library:AddTab("Devil Fruit","4483345998")
-local Misc = Library:AddTab("Misc","4483345998")
+local If = Library:AddTab("Information","16146893819")
+local Main = Library:AddTab("Main","7733960981")
+local M = Library:AddTab("Item","7734052075")
+local Ss = Library:AddTab("Stats","7733964719")
+local RaceV4 = Library:AddTab("Race V4","7743875759")
+local P = Library:AddTab("PVP","7743876054")
+local R = Library:AddTab("Dungeon","7743872758")
+local T = Library:AddTab("Teleport","7733924216")
+local S = Library:AddTab("Shop","7734056813")
+local D = Library:AddTab("Devil Fruit","8997385940")
+local Misc = Library:AddTab("Misc","7733954058")
+
+If:AddSeperator("Main")
+If:AddLabel("auto lvl farm")
+If:AddLabel("auto chest")
+If:AddLabel("auto katakuri")
+If:AddLabel("setting farm")
+If:AddLabel("farm mode")
+If:AddLabel("mastery setting")
+
+If:AddSeperator("items")
+If:AddLabel("auto items farm")
+If:AddLabel("auto bones farm")
+
+If:AddSeperator("Stats")
+If:AddLabel("stat")
+
+If:AddSeperator("race v4")
+If:AddLabel("race trial")
+
+If:AddSeperator("pvp")
+If:AddLabel("as the name")
+
+If:AddSeperator("dungeon")
+If:AddLabel("raid")
+
+If:AddSeperator("teleport")
+If:AddLabel("tele to island or npc")
+
+If:AddSeperator("shop")
+If:AddLabel("shopping")
+
+If:AddSeperator("devil fruit")
+If:AddLabel("fruits")
+
+If:AddSeperator("misc")
+If:AddLabel("idk")
 
 Main:AddSeperator("Farm Settings")
 
