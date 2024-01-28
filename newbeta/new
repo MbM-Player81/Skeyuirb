@@ -14173,10 +14173,6 @@ for i,v in pairs(game.Players:GetPlayers()) do
 end
 end)
 
-task.delay(25 * 60,function() -- hop every 25 min
-   
-loadstring(game:HttpGet("https://raw.githubusercontent.com/m1M-Plqer819/hop/main/server/every"))()
-end)
 --15582682098--mbm  x  Hub
                       print("made by minh hub")
                       print("mbm x hub")
