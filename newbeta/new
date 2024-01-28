@@ -4830,18 +4830,18 @@ end)
     Main:AddLabel("Pos Y ")
     Main:AddLabel("Pos Z ")
 
-    PosX = 1
-    Main:AddSlider("Pos X",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3,-35,-40,-45,-50,function(value)
+    PosX = 30
+    Main:AddSlider("Pos X",0,-30,5,10,20,30,-5,-10,-20,function(value)
     PosX = value
     end)
 
-    PosY = 30
-    Main:AddSlider("Pos Y",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3,-35,-40,-45,-50,function(value)
+    PosY = -30
+    Main:AddSlider("Pos Y",0,-30,5,10,20,30,-5,-10,-20,function(value)
     PosY = value
     end)
 
-    PosZ = 10
-    Main:AddSlider("Pos Z",0,50,40,-30,5,10,15,20,25,30,35,45,-5,-10,-15,-20,-25,-3,-35,-40,-45,-50,function(value)
+    PosZ = 0
+    Main:AddSlider("Pos Z",0,-30,5,10,20,30,-5,-10,-20,function(value)
     PosZ = value
     end)
     
