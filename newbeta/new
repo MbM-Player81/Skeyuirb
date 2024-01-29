@@ -4083,7 +4083,7 @@ end)
        end
    end)
    
-   Main:AddToggle("Set Spawn Point",true,function(value)
+   Main:AddToggle("Set Spawn Point",false,function(value)
 _G.Set = value
 end)
 
