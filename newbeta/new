@@ -1,6 +1,6 @@
-local lootlabs = 'https://loot-link.com/s?nxdi';
+local lootlabs = 'https://loot-link.com/s?nxdi'
 local discordLink = 'https://discord.gg/s6yydxTy8f';
-local uniqueKey = game:HttpGet'https://discord.gg/s6yydxTy8f';
+local uniqueKey = game:HttpGet'https://raw.githubusercontent.com/m1M-Plqer819/dakiiuem/main/ks.txt';
 
 local thescript = [[
     loadstring(game:HttpGet("https://raw.githubusercontent.com/dakiiuem/DakiiV2/main/MainV2"))();
