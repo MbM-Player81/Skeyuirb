@@ -1,9 +1,9 @@
-local key = 'https://loot-link.com/s?nxdi'
+local lootlabs = 'https://loot-link.com/s?nxdi';
 local discordLink = 'https://discord.gg/s6yydxTy8f';
-local uniqueKey = game:HttpGet'https://raw.githubusercontent.com/m1M-Plqer819/dakiiuem/main/ks.txt';
+local uniqueKey = game:HttpGet'https://discord.gg/s6yydxTy8f';
 
 local thescript = [[
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/dakiiuem/DakiiV2/main/MainV2", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dakiiuem/DakiiV2/main/MainV2"))();
 ]]
 
 local gui = Instance.new("ScreenGui")
@@ -52,7 +52,7 @@ logo.BackgroundTransparency = 1
 logo.Size = UDim2.new(0.5, 0, 0.5, 0)
 logo.Position = UDim2.new(0.5, 0, 0, 35)
 logo.AnchorPoint = Vector2.new(0.5, 0)
-logo.Image = "http://www.roblox.com/asset/?id=15933497653"
+logo.Image = "http://www.roblox.com/asset/?id=16147049062"
 
 local closeButton = Instance.new("TextButton")
 closeButton.Name = "CloseButton"
@@ -117,7 +117,7 @@ getKeyButton.MouseButton1Click:Connect(function()
         Text = "https://discord.gg/s6yydxTy8f",
         Duration = 4
     })
-    setclipboard(key)
+    setclipboard(lootlabs)
 end)
 
 loginButton.MouseButton1Click:Connect(function()
