@@ -1,275 +1,150 @@
---UI 
-local G2L = {};
+local key = 'https://loot-link.com/s?nxdi'
+local discordLink = 'https://discord.gg/s6yydxTy8f';
+local uniqueKey = game:HttpGet'https://raw.githubusercontent.com/m1M-Plqer819/dakiiuem/main/ks.txt';
 
--- StarterGui.ui
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L["1"]["Name"] = [[ui]];
-G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+local thescript = [[
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dakiiuem/DakiiV2/main/MainV2", true))()
+]]
 
--- StarterGui.ui.auto chest
-G2L["2"] = Instance.new("Frame", G2L["1"]);
-G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(171, 255, 255);
-G2L["2"]["BackgroundTransparency"] = 0.6499999761581421;
-G2L["2"]["Size"] = UDim2.new(0, 250, 0, 250);
-G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Position"] = UDim2.new(0.3122515082359314, 0, 0.1171712651848793, 0);
-G2L["2"]["Name"] = [[auto chest]];
+local gui = Instance.new("ScreenGui")
+gui.Name = "DakiiHubGUI"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- StarterGui.ui.auto chest.TextLabel
-G2L["3"] = Instance.new("TextLabel", G2L["2"]);
-G2L["3"]["BorderSizePixel"] = 0;
-G2L["3"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(171, 255, 255);
-G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3"]["TextSize"] = 20;
-G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["Size"] = UDim2.new(0, 247, 0, 63);
-G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["Text"] = [[Dakii Auto Chest]];
-G2L["3"]["BackgroundTransparency"] = 1;
-G2L["3"]["Position"] = UDim2.new(0.012000000104308128, 0, 0, 0);
+local frame = Instance.new("Frame")
+frame.Name = "MainFrame"
+frame.Parent = gui
+frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+frame.Position = UDim2.new(0.5, -150, 0.5, -110)
+frame.Size = UDim2.new(0, 300, 0, 220)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
 
--- StarterGui.ui.auto chest.TextLabel.UICorner
-G2L["4"] = Instance.new("UICorner", G2L["3"]);
+local blackOverlay = Instance.new("Frame")
+blackOverlay.Name = "BlackOverlay"
+blackOverlay.Parent = frame
+blackOverlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+blackOverlay.BackgroundTransparency = 0.7
+blackOverlay.Size = UDim2.new(1, 0, 1, 0)
 
+local background = Instance.new("ImageLabel")
+background.Name = "Background"
+background.Parent = frame
+background.BackgroundTransparency = 1
+background.Size = UDim2.new(1, 0, 1, 0)
+background.Image = "http://www.roblox.com/asset/?id=15933497653"
 
--- StarterGui.ui.auto chest.TextBox
-G2L["5"] = Instance.new("ImageLabel", G2L["2"]);
-G2L["5"]["BorderSizePixel"] = 0;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["Selectable"] = true;
-G2L["5"]["Image"] = [[rbxassetid://15933497653]];
-G2L["5"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["5"]["Active"] = true;
-G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5"]["Name"] = [[TextBox]];
-G2L["5"]["BackgroundTransparency"] = 1;
+local title = Instance.new("TextLabel")
+title.Name = "Title"
+title.Parent = frame
+title.BackgroundTransparency = 1
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Position = UDim2.new(0, 0, 0, 10)
+title.Font = Enum.Font.Ubuntu
+title.Text = "Dakii Hub"
+title.TextSize = 24
+title.TextColor3 = Color3.fromRGB(52, 235, 216)
 
--- StarterGui.ui.auto chest.TextBox.UICorner
-G2L["6"] = Instance.new("UICorner", G2L["5"]);
+local logo = Instance.new("ImageLabel")
+logo.Name = "Logo"
+logo.Parent = frame
+logo.BackgroundTransparency = 1
+logo.Size = UDim2.new(0.5, 0, 0.5, 0)
+logo.Position = UDim2.new(0.5, 0, 0, 35)
+logo.AnchorPoint = Vector2.new(0.5, 0)
+logo.Image = "http://www.roblox.com/asset/?id=15933497653"
 
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Parent = frame
+closeButton.Size = UDim2.new(0, 25, 0, 25)
+closeButton.Position = UDim2.new(1, -30, 0, 5)
+closeButton.Font = Enum.Font.Ubuntu
+closeButton.Text = "X"
+closeButton.TextSize = 18
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+closeButton.BackgroundTransparency = 0.9
+closeButton.BorderSizePixel = 0
 
--- StarterGui.ui.auto chest.TextLabel
-G2L["7"] = Instance.new("TextLabel", G2L["2"]);
-G2L["7"]["BorderSizePixel"] = 0;
-G2L["7"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["7"]["BackgroundColor3"] = Color3.fromRGB(171, 255, 255);
-G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7"]["TextSize"] = 15;
-G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Size"] = UDim2.new(0, 247, 0, 63);
-G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Text"] = [[made by dakii | m1m]];
-G2L["7"]["BackgroundTransparency"] = 1;
-G2L["7"]["Position"] = UDim2.new(0.012000000104308128, 0, 0.06400000303983688, 0);
+closeButton.MouseButton1Click:Connect(function()
+    gui:Destroy()
+end)
 
--- StarterGui.ui.auto chest.TextLabel.UICorner
-G2L["8"] = Instance.new("UICorner", G2L["7"]);
+local keyTextBox = Instance.new("KeyCode")
+keyTextBox.Name = "KeyTextBox"
+keyTextBox.Parent = frame
+keyTextBox.Size = UDim2.new(0.7, 0, 0, 30)
+keyTextBox.Position = UDim2.new(0.5, -keyTextBox.Size.X.Offset / 2, 0.95, -35)
+keyTextBox.AnchorPoint = Vector2.new(0.5, 1)
+keyTextBox.PlaceholderText = "Digite a chave"
+keyTextBox.Font = Enum.Font.Ubuntu
+keyTextBox.TextSize = 18
+keyTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+keyTextBox.BackgroundTransparency = 0.8
 
+local buttonContainer = Instance.new("Frame")
+buttonContainer.Name = "ButtonContainer"
+buttonContainer.Parent = frame
+buttonContainer.Size = UDim2.new(0.7, 0, 0, 30)
+buttonContainer.Position = UDim2.new(0.5, -buttonContainer.Size.X.Offset / 2, 0.95, -3)
+buttonContainer.AnchorPoint = Vector2.new(0.5, 1)
+buttonContainer.BackgroundTransparency = 1
 
--- StarterGui.ui.auto chest.UICorner
-G2L["9"] = Instance.new("UICorner", G2L["2"]);
+local function createButton(name, position, text)
+    local button = Instance.new("TextButton")
+    button.Name = name
+    button.Parent = buttonContainer
+    button.Size = UDim2.new(0.3, 0, 0, 30)
+    button.Position = position
+    button.Font = Enum.Font.Ubuntu
+    button.Text = text
+    button.TextSize = 18
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    button.BackgroundTransparency = 0.9
+    button.BorderSizePixel = 0
+    return button
+end
 
+local getKeyButton = createButton("GetKeyButton", UDim2.new(0, 0, 0, 0), "Get Key")
+local loginButton = createButton("LoginButton", UDim2.new(0.35, 0, 0, 0), "Login")
+local buyKeyButton = createButton("BuyKeyButton", UDim2.new(0.7, 0, 0, 0), "buy key")
 
--- StarterGui.ui.auto chest.UIStroke
-G2L["a"] = Instance.new("UIStroke", G2L["2"]);
+getKeyButton.MouseButton1Click:Connect(function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Dakii Hub",
+        Text = "https://discord.gg/s6yydxTy8f",
+        Duration = 4
+    })
+    setclipboard(key)
+end)
 
+loginButton.MouseButton1Click:Connect(function()
+    local enteredKey = keyTextBox.Text
 
--- StarterGui.ui.auto chest.TextLabel
-G2L["b"] = Instance.new("TextLabel", G2L["2"]);
-G2L["b"]["BorderSizePixel"] = 0;
-G2L["b"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
-G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["b"]["TextSize"] = 20;
-G2L["b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b"]["Size"] = UDim2.new(0, 88, 0, 29);
-G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b"]["BackgroundTransparency"] = 1;
-G2L["b"]["Position"] = UDim2.new(0.328000009059906, 0, 0.8840000629425049, 0);
-
--- StarterGui.ui.auto chest.TextLabel.UICorner
-G2L["c"] = Instance.new("UICorner", G2L["b"]);
-
-
--- StarterGui.ui.auto chest.TextLabel.UIStroke
-G2L["d"] = Instance.new("UIStroke", G2L["b"]);
-
-
--- StarterGui.ui.auto chest.TextLabel.LocalScript
-G2L["e"] = Instance.new("LocalScript", G2L["b"]);
-
-
--- StarterGui.ui.auto chest.TextLabel.LocalScript
-local function C_e()
-local script = G2L["e"];
-	local timer = script.Parent
-	local  min = 0
-	local  sec = 0
-	
-	repeat 
-			if sec>= 59 then 
-				min = min +1
-			sec = 0
-		else 
-			sec = sec +1
-		end	
-		if sec < 9 and min < 9 then 
-			timer.Text ="0"..tostring(min)..":0"..tostring(sec)
-		else
-			timer.Text = tostring(min)..":"..tostring(sec)
-		end
-		wait(1)
-	until min > 100000 and sec > 10000000
-	
-	
-end;
-task.spawn(C_e);
-
---team
-
-spawn(function()
-    while task.wait() do
-    if _G.ChestBypass then
-        local ohString1 = "SetTeam"
-        local ohString2 = "Pirates"
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
-     end
-    end
-    end)
-
-
---check body
-spawn(function()
-    while task.wait() do
-        pcall(function()
-            if _G.chestsea2 or _G.chestsea3 then
-                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-                    local Noclip = Instance.new("BodyVelocity")
-                    Noclip.Name = "BodyClip"
-                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
-                    Noclip.Velocity = Vector3.new(0,0,0)
-                end
-            else
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-            end
-        end)
+    if enteredKey == uniqueKey then
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Dakii Hub",
+            Text = "wait script...",
+            Duration = 4
+        })
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/dakiiuem/DakiiV2/main/MainV2"))()
+        gui:Destroy()
+    else
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Dakii Hub",
+            Text = "have fun",
+            Duration = 4
+        })
     end
 end)
 
-
---check hop 
-function Hop()
-    local PlaceID = game.PlaceId
-    local AllIDs = {}
-    local foundAnything = ""
-    local actualHour = os.date("!*t").hour
-    local Deleted = false
-    function TPReturner()
-        local Site;
-        if foundAnything == "" then
-            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
-        else
-            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-        end
-        local ID = ""
-        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-            foundAnything = Site.nextPageCursor
-        end
-        local num = 0;
-        for i,v in pairs(Site.data) do
-            local Possible = true
-            ID = tostring(v.id)
-            if tonumber(v.maxPlayers) > tonumber(v.playing) then
-                for _,Existing in pairs(AllIDs) do
-                    if num ~= 0 then
-                        if ID == tostring(Existing) then
-                            Possible = false
-                        end
-                    else
-                        if tonumber(actualHour) ~= tonumber(Existing) then
-                            local delFile = pcall(function()
-                                AllIDs = {}
-                                table.insert(AllIDs, actualHour)
-                            end)
-                        end
-                    end
-                    num = num + 1
-                end
-                if Possible == true then
-                    table.insert(AllIDs, ID)
-                    wait()
-                    pcall(function()
-                        wait()
-                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
-                    end)
-                    wait(4)
-                end
-            end
-        end
-    end
-    function Teleport() 
-        while wait() do
-            pcall(function()
-                TPReturner()
-                if foundAnything ~= "" then
-                    TPReturner()
-                end
-            end)
-        end
-    end
-    Teleport()
-end  
---team
-
-spawn(function()
-    while task.wait() do
-    if _G.ChestBypass then
-        local ohString1 = "SetTeam"
-        local ohString2 = "Pirates"
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
-     end
-    end
-    end)
---autu chest 
-
-spawn(function()
-    while wait() do
-    if _G.ChestBypass then
-    pcall(function()
-    for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-      if string.find(v.Name, "Chest") then
-          print(v.Name)
-          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-          wait(.15)
-      end
-    end
-    game.Players.LocalPlayer.Character.Head:Destroy()
-    for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
-    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-    wait()
-    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
-    end
-    end
-    end)
-    end
-    end
-    end)
-    
-    
-    spawn(function()
-        while wait() do
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name == "red_game43" or v.Name == "rip_indra" or v.Name == "Axiore" or v.Name == "Polkster" or v.Name == "wenlocktoad" or v.Name == "Daigrock" or v.Name == "toilamvidamme" or v.Name == "oofficialnoobie" or v.Name == "Uzoth" or v.Name == "Azarth" or v.Name == "arlthmetic" or v.Name == "Death_King" or v.Name == "Lunoven" or v.Name == "TheGreateAced" or v.Name == "rip_fud" or v.Name == "drip_mama" or v.Name == "layandikit12" or v.Name == "Hingoi" then
-                Hop()
-                end
-            end
-        end
-    end)
-
-    wait(180) do 
-        Hop()
-    end
+buyKeyButton.MouseButton1Click:Connect(function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Dakii Hub",
+        Text = "w",
+        Duration = 4
+    })
+    setclipboard(discordLink)
+end)
